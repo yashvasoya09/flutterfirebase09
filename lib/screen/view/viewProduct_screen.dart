@@ -182,65 +182,70 @@ class _viewProductScreenState extends State<viewProductScreen> {
                         itemCount: productDataList.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          return Container(
-                            height: 150,
-                            width: 150,
-                            margin: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Color(0xffFEFEFE),
-                              boxShadow: [
-                                BoxShadow(color: Colors.grey, blurRadius: 6)
-                              ],
-                              borderRadius: BorderRadius.circular(
-                                20,
+                          return GestureDetector(
+
+onLongPress: () {
+  fireBase_Helper.firebase.deleteProductInFireBase(productDataList[index].id as String);
+},                            child: Container(
+                              height: 150,
+                              width: 150,
+                              margin: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Color(0xffFEFEFE),
+                                boxShadow: [
+                                  BoxShadow(color: Colors.grey, blurRadius: 6)
+                                ],
+                                borderRadius: BorderRadius.circular(
+                                  20,
+                                ),
                               ),
-                            ),
-                            child: Column(
-                              children: [
-                                Row(mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Icon(CupertinoIcons.heart,color: Colors.orangeAccent,size: 25,),
-                                    ),
-                                  ],
-                                ),
-                                  Container(height: 80,width: 120,child: CachedNetworkImage(
-                                    imageUrl: "${productDataList[index].img}",
-                                    placeholder: (context, url) => Container(
-                                      height: 20,
-                                      width: 20,
-                                      child: LoadingIndicator(
-                                        indicatorType: Indicator.ballPulseRise
-                                        ,
-                                        colors:  [Colors.red,Colors.redAccent,Colors.orange,Colors.orangeAccent,Colors.yellow],
-                                        pathBackgroundColor: Colors.yellow,
-                                        strokeWidth: 2,
-                                        backgroundColor: Colors.white,
+                              child: Column(
+                                children: [
+                                  Row(mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Icon(CupertinoIcons.heart,color: Colors.orangeAccent,size: 25,),
                                       ),
-                                    ),
-                                    errorWidget: (context, url, error) => Icon(Icons.error),
-                                  ),),
-                                SizedBox(height: 10),
-                                Text("${productDataList[index].pname}",style: GoogleFonts.play(color: Colors.black,fontSize: 14),),
-                                Spacer(),
-                                Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text("₹${productDataList[index].pprice}",style: GoogleFonts.play(color: Colors.orangeAccent,fontSize: 17),),
-                                    ),
-                                    Spacer(),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: InkWell(onTap: () {
-                                        Get.toNamed("update",arguments: productDataList[index].id);
-                                      },child: Icon(Icons.add,color: Colors.orangeAccent,size: 17)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 5),
-                              ],
+                                    ],
+                                  ),
+                                    Container(height: 80,width: 120,child: CachedNetworkImage(
+                                      imageUrl: "${productDataList[index].img}",
+                                      placeholder: (context, url) => Container(
+                                        height: 20,
+                                        width: 20,
+                                        child: LoadingIndicator(
+                                          indicatorType: Indicator.ballPulseRise
+                                          ,
+                                          colors:  [Colors.red,Colors.redAccent,Colors.orange,Colors.orangeAccent,Colors.yellow],
+                                          pathBackgroundColor: Colors.yellow,
+                                          strokeWidth: 2,
+                                          backgroundColor: Colors.white,
+                                        ),
+                                      ),
+                                      errorWidget: (context, url, error) => Icon(Icons.error),
+                                    ),),
+                                  SizedBox(height: 10),
+                                  Text("${productDataList[index].pname}",style: GoogleFonts.play(color: Colors.black,fontSize: 14),),
+                                  Spacer(),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text("₹${productDataList[index].pprice}",style: GoogleFonts.play(color: Colors.orangeAccent,fontSize: 17),),
+                                      ),
+                                      Spacer(),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: InkWell(onTap: () {
+                                          Get.toNamed("update",arguments: productDataList[index].id);
+                                        },child: Icon(Icons.add,color: Colors.orangeAccent,size: 17)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 5),
+                                ],
+                              ),
                             ),
                           );
                         },
