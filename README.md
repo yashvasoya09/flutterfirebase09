@@ -17,10 +17,12 @@ samples, guidance on mobile development, and a full API reference.
 
 <p>
 <img src = "https://github.com/yashvasoya09/flutterfirebase09/assets/120082183/62e8a4d8-2ddd-4a03-bbfc-1bc9513c453e" height="20%"width="20%">
+
+  <img src = "https://github.com/yashvasoya09/flutterfirebase09/assets/120082183/060ebce3-06e7-4aed-9d58-51b2271f6ebc" height="20%"width="20%">
 </p>
 
 <p>
-<img src = "https://github.com/yashvasoya09/flutterfirebase09/assets/120082183/060ebce3-06e7-4aed-9d58-51b2271f6ebc" height="20%"width="20%">
+
 </p>
 
 <p>
