@@ -1,4 +1,3 @@
-![Screenshot 2023-08-14 112314_samsung-galaxys20ultra-cosmicblack-portrait](https://github.com/yashvasoya09/flutterfirebase09/assets/120082183/0f913514-fbe6-4bd0-a52c-e787c32bd19c)# flutterfirebase09
 
 A new Flutter project.
 
